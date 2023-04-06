@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <script>
+      const socket = new WebSocket('ws://localhost');
+      socket.onopen = function() {
+        console.log('Connected');
+        socket.send(
+          JSON.stringify({
+            event: 'createTimespan',
+            data: 'test',
+          }),
+        );
+        socket.onmessage = function(data) {
+          console.log("Message Event");
+          console.log(data);
+        };
+        socket.onerror = function(data) {
+          console.log("Error Event");
+          console.log(data);
+        };
+        socket.on
+      };
+    </script>
+  </head>
+
+  <body></body>
+</html>
